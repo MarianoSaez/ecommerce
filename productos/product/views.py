@@ -50,6 +50,6 @@ class ProductoVendidoView(generics.GenericAPIView):
             
             if serializer.is_valid():
                 serializer.save()
-                return Response(serializer.data, status=200)
             else:
                 return Response(serializer.errors, status=500)
+        return Response(serializer.data, status=200)
